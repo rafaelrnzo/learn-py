@@ -26,12 +26,33 @@
 
 # rudi.getHp()
 
-class Utilitas:
-    @staticmethod
-    def tambah(x, y):
-        return x + y
+# class Utilitas:
+#     @staticmethod
+#     def tambah(x, y):
+#         return x + y
 
-# Menggunakan metode statis
-hasil = Utilitas.tambah(5, 3)
-print(f"Jumlah: {hasil}")
+# # Menggunakan metode statis
+# hasil = Utilitas.tambah(5, 3)
+# print(f"Jumlah: {hasil}")
 
+# Python program to explain property()
+# function using decorator
+
+class Person:
+    def __init__(self, age):
+        self._age = age
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Usia tidak boleh negatif")
+        self._age = value
+
+person1 = Person(30)
+print(person1.age)
+person1.age = 0
+print(person1.age)
